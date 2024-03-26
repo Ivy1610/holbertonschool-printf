@@ -16,12 +16,13 @@ int _printf(const char * const format, ...)
 		{"%i", printf_int},
 		{NULL, NULL},
 	};
-	
+
 	va_list args;
 	int i = 0, j, len = 0;
-	
+
 	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))                return (-1);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 
 Here:
 	while (format[i] != '\0')
