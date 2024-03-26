@@ -12,11 +12,12 @@ int printf_string(va_list val)
 {
 	char *str;
 	int len = 0;
+
 	str = va_arg(val, char *);
-	
+
 	if (str == NULL)
 		str = "(NULL)";
-	
+
 	while (*str != 0)
 	{
 		_putchar(*str);

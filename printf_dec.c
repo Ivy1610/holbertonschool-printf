@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_dec - print decimal
+ * printf_dec - print decimal
  * @args: argument to print
  * Return: number of characters printed
  */
