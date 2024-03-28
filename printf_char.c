@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "main.h"
+
 /**
  * print_char - check the code
  * @ch: char

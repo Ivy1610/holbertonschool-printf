@@ -1,10 +1,13 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include "main.h"
+
 /**
  * print_integer - check the code
  * @num: integer
  * Return: int
  */
+
 int print_integer(int num)
 {
 	int count = 0;

@@ -1,8 +1,11 @@
 #include <stdarg.h>
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
+
 /**
  * _printf - check the code
+ * print_char - Print character
+ * print_string - Print string
  * @format: pointer
  * Return: int
  */
@@ -25,7 +28,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*ptr == 's')
 			{
-				count += print_string(va_arg(args, char *));
+				count += printf_string(va_arg(args, char *));
 			}
 			else if (*ptr == 'd' || *ptr == 'i')
 			{

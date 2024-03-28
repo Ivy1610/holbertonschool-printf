@@ -1,5 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include "main.h"
+
 /**
  * print_unsigned_int - check the code
  * @num: integer
