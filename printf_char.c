@@ -1,7 +1,11 @@
 #include <stdio.h>
-
+/**
+ * print_char - check the code
+ * @ch: char
+ * Return: integer
+ */
 int print_char(char ch)
 {
 	putchar(ch);
-	return 1;
+	return (1);
 }

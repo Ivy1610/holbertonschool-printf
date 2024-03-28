@@ -1,11 +1,16 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "main.h"
-
-int _printf(const char *format, ...) {
-	// déclaration et initialisation
+/**
+ * _printf - check the code
+ * @format: pointer
+ * Return: int
+ */
+int _printf(const char *format, ...)
+{
 	va_list args;
 	int count = 0;
+
 	const char *ptr;
 	va_start(args, format);
 
@@ -38,12 +43,6 @@ int _printf(const char *format, ...) {
 			{
 				count += print_hexadecimal(va_arg(args, unsigned int));
 			}
-			/** 
-			 * else if (*ptr == 'p')
-			 * {
-			 *     count += print_pointer(va_arg(args, void *));
-			 * }
-			 */
 			else if (*ptr == '%')
 			{
 				putchar('%');
@@ -63,6 +62,5 @@ int _printf(const char *format, ...) {
 		}
 	}
 	va_end(args);
-	return count;
+	return (count);
 }
-

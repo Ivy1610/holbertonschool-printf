@@ -2,9 +2,9 @@
 #include <stddef.h>
 #include <string.h>
 /**
- * printf_string - print a string
- * @val: arguments
- * Return: the length of the string
+ * print_string - print a string
+ * @str: char
+ * Return: int the length of str
  */
 
 int print_string(const char *str)

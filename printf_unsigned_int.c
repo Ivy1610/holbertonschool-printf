@@ -1,12 +1,19 @@
 #include <stdarg.h>
 #include <stdio.h>
+/**
+ * print_unsigned_int - check the code
+ * @num: integer
+ * Return: int
+ */
+int print_unsigned_int(unsigned int num)
+{
+	int count = 0;
 
-int print_unsigned_int(unsigned int num) {
-        int count = 0;
-        printf("%u", num);
-        while (num != 0) {
-                num /= 10;
-                count++;
-        }
-        return (count);
+	printf("%u", num);
+	while (num != 0)
+	{
+		num /= 10;
+		count++;
+	}
+	return (count);
 }
