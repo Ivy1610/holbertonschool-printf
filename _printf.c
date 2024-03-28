@@ -1,45 +1,117 @@
+#include <stdarg.h>
+#include <stdio.h>
 #include "main.h"
-#include <stddef.h>
-/**
- * _printf - function that selects the correct function to print
- * @format: identifier to look for
- *
- * Return: hte length of the string
- */
-int _printf(const char * const format, ...)
+
+int print_string(const char *str) {
+	int count = 0;
+	while (*str != '\0') {
+		putchar(*str);
+		str++;
+		count++;
+	}
+	return count;
+}
+
+int print_integer(int num) {
+	int count = 0;
+	printf("%d", num);
+	while (num != 0) {
+		num /= 10;
+		count++;
+	}
+	return (count);
+}
+
+int print_unsigned_int(unsigned int num) {
+	int count = 0;
+	printf("%u", num);
+	while (num != 0) {
+		num /= 10;
+		count++;
+	}
+	return (count);
+}
+
+int print_octal(unsigned int num) {
+	int count = 0;
+	printf("%o", num);
+	while (num != 0) {
+		num /= 8;
+		count++;
+	}
+	return (count);
+}
+
+int print_hexadecimal(unsigned int num) {
+	int count = 0;
+	printf("%x", num);
+	while (num != 0) {
+		num /= 16;
+		count++;
+	}
+	return (count);
+}
+
+int print_pointer(void *ptr)
 {
-	print_t m[] = {
-		{"%s", printf_string},
-		{"%c", printf_char},
-		{"%%", printf_prcent},
-		{"%d", printf_dec},
-		{"%i", printf_int},
-		{NULL, NULL},
-	};
+	printf("%p", ptr);
+	return (2);
+}
 
+int _printf(const char *format, ...) {
+	// declaration et initialisation
 	va_list args;
-	int i = 0, j, len = 0;
-
+	int count = 0;
+	const char *ptr;
 	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
 
-	while (format[i] != '\0')
+	for (ptr = format; *ptr != '\0'; ptr++)
 	{
-		j = 4;
-		while (j >= 0)
+		if (*ptr == '%')
 		{
-			if (m[j].type_arg[0] == format[i] && m[j].type_arg[1] == format[i + 1])
+			ptr++;
+			switch (*ptr)
 			{
-				len += m[j].f(args);
-				i = i + 2;
+				case 'c':
+					count += print_char(va_arg(args, int));
+					break;
+				case 's':
+					count += print_string(va_arg(args, char *));
+					break;
+				case 'd':
+				case 'i':
+					count += print_integer(va_arg(args, int));
+					break;
+				case 'u':
+					count += print_unsigned_int(va_arg(args, unsigned int));
+					break;
+				case 'o':
+					count += print_octal(va_arg(args, unsigned int));
+					break;
+				case 'x':
+				case 'X':
+					count += print_hexadecimal(va_arg(args, unsigned int));
+					break;
+				case 'p':
+					count += print_pointer(va_arg(args, void *));
+					break;
+				case '%':
+					putchar('%');
+					count++;
+					break;
+				default:
+					putchar('%');
+					putchar(*ptr);
+					count += 2;
+					break;
 			}
-			j--;
 		}
-		_putchar(format[i]);
-		len++;
-		i++;
+		else
+		{
+			putchar(*ptr);
+			count++;
+		}
 	}
 	va_end(args);
-	return (len);
+	return count;
 }
