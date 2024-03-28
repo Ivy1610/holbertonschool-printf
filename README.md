@@ -6,14 +6,14 @@ _printf() is a function that performs formatted ouput conversion and prints the 
 int _printf(const char *format, ...);
 
 
-## Compalation
+## Compilation
 
 The line of code we use to compile:
 ```
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ```
 
-##Requirements:
+## Requirements:
 
 .	Used editor : vi
 .	All files will be compiled on Ubuntu 20.04 LTS 
@@ -22,7 +22,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 .	No more than 5 functions per file
 .	All prototypes for functions should be included in the header file main.h
 
-###Authorized functions and macros:
+## Authorized functions and macros:
 
 - `write` (`man 2 write`)
 - malloc (man 3 malloc),
@@ -42,7 +42,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 | x | unsigned hexadecimal integer | 8ca |
 | u | unsigned decimal integer | 1024 |
 
-##Files contained in this repository
+## Files contained in this repository
 |Name                |Information                        |Relevant Files                         |
 |----------------|-------------------------------|-----------------------------|
 | `main.h`	| Header file with the data type struct, standard libraries and custom prototypes.| `*.c compilation` |
@@ -53,3 +53,6 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 | `printf_o.c` | Functions that returns octal number. | `None` |
 | `printf_hex.c` | Calls hexadecimal numbers (lowercase). | `None` | 
 | `printf_unsigned_int.c` | Returns an unisgined data type. | `None` |
+
+## flowchart
+:![image](flowchart_printf().jpg)
