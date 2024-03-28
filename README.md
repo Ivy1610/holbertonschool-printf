@@ -1,4 +1,4 @@
-# Printf
+#Printf
 The printf projet is a collaboration project by **Aline Laurier**, **Fatma Gmati** and **Yveline Mendes**, first year students in the fundamentals program at Holberton School, in which a function named "_printf" mimmics the actual "printf" command located in the <stdio.h> library. it contains some of the basic features and functions found in "printf" manuel 3.
 
 _printf() is a function that performs formatted ouput conversion and prints the data. its prototype is as follows:
@@ -6,7 +6,7 @@ _printf() is a function that performs formatted ouput conversion and prints the 
 int _printf(const char *format, ...);
 
 
-## Compalation
+##Compilation
 
 The line of code we use to compile:
 ```
@@ -32,7 +32,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 - va_copy (man 3 va_copy),
 - va_arg (man 3 va_arg)
 
-## Specifiers
+##Specifiers
 | specifier | output | exemple |
 |------------|---------|---------|
 | c | a single character | y |
@@ -53,3 +53,6 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 | `printf_o.c` | Functions that returns octal number. | `None` |
 | `printf_hex.c` | Calls hexadecimal numbers (lowercase). | `None` | 
 | `printf_unsigned_int.c` | Returns an unisgined data type. | `None` |
+
+##flowchart
+:![](flowchart_printf().jpg)
