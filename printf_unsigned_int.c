@@ -1,9 +1,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-int print_integer(int num) {
+int print_unsigned_int(unsigned int num) {
         int count = 0;
-        printf("%d", num);
+        printf("%u", num);
         while (num != 0) {
                 num /= 10;
                 count++;

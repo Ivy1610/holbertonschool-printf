@@ -1,6 +1,5 @@
-#include "main.h"
+#include <stdio.h>
 #include <stddef.h>
-#include <stdarg.h>
 #include <string.h>
 /**
  * printf_string - print a string
@@ -8,21 +7,15 @@
  * Return: the length of the string
  */
 
-int printf_string(va_list val)
+int print_string(const char *str)
 {
-	char *str;
-	int len = 0;
-
-	str = va_arg(val, char *);
-
-	if (str == NULL)
-		str = "(NULL)";
+	int count = 0;
 
 	while (*str != 0)
 	{
-		_putchar(*str);
+		putchar(*str);
 		str++;
-		len++;
+		count++;
 	}
-	return (len);
+	return (count);
 }
