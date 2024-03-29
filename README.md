@@ -54,5 +54,9 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 | `printf_hex.c` | Calls hexadecimal numbers (lowercase). | `None` | 
 | `printf_unsigned_int.c` | Returns an unisgined data type. | `None` |
 
+## MAN PAGE
+
+You can find the man page for _printf [here](man_3_printf).
+
 ## flowchart
-:![image](flowchart_printf().jpg)
+:![image](https://github.com/Ivy1610/holbertonschool-printf/blob/main/FigJam%20whiteboarding%20101.jpg)
